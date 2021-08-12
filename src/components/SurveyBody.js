@@ -52,9 +52,7 @@ const SurveyBody = () => {
   };
   console.log([q4bValue1, q4bValue2]);
   const handleSearch = () => {
-    fetch(
-      `https://enigmatic-tundra-20141.herokuapp.com/dMatched/${searchNumber}`
-    )
+    fetch(`http://192.168.10.11:5005/dMatched/${searchNumber}`)
       .then((res) => res.json())
       .then((data) => setConsumer(data));
     setNotFound(true);
@@ -137,14 +135,11 @@ const SurveyBody = () => {
       callTime: new Date().toLocaleTimeString(),
     };
     console.log(answer);
-    fetch(
-      `https://enigmatic-tundra-20141.herokuapp.com/answers/${consumer?._id}`,
-      {
-        method: "PATCH",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(answer),
-      }
-    )
+    fetch(`http://192.168.10.11:5005/answers/${consumer?._id}`, {
+      method: "PATCH",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(answer),
+    })
       .then((res) => res.json())
       .then((data) => console.log(data));
     window.location.reload(false);
@@ -612,8 +607,8 @@ const SurveyBody = () => {
       >
         <h6>
           <span className="font-weight-bold"> Q5. </span>আপনি সম্প্রতি যে নতুন
-          স্বাদযুক্ত ব্র্যান্ডটি ধূমপান করেছেন তা আপনি কোন মূল্যে কিনেছেন? দয়া
-          করে stick দাম উল্লেখ করুন।
+          Flavor ব্র্যান্ডটি ধূমপান করেছেন তা আপনি কোন মূল্যে কিনেছেন? দয়া করে
+          stick দাম উল্লেখ করুন।
         </h6>
         <Form.Group onChange={q11value} as={Row}>
           <Form.Control as="select" className="w-50 ml-3">
@@ -648,8 +643,8 @@ const SurveyBody = () => {
       >
         <h6>
           <span className="font-weight-bold"> Q7. </span>আপনি যেমন বলেছিলেন যে
-          আপনি স্বাদযুক্ত সিগারেট ধূমপান করেন, স্যার দৈনিক কত শলাকা স্বাদযুক্ত
-          সিগারেট ধূমপান করছেন ?
+          আপনি Flavor সিগারেট ধূমপান করেন, স্যার দৈনিক কত শলাকা Flavor সিগারেট
+          ধূমপান করছেন ?
         </h6>
         <Form.Group onChange={q13value} as={Row}>
           <Form.Control as="select" className="w-50 ml-3">

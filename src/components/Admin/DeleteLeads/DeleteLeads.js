@@ -5,25 +5,22 @@ const DeleteLeads = () => {
   const [dates, setDates] = useState([]);
   const [ddStatus, setDDStatus] = useState(false);
   useEffect(() => {
-    fetch("https://enigmatic-tundra-20141.herokuapp.com/reportDates")
+    fetch("http://192.168.10.11:5005/reportDates")
       .then((res) => res.json())
       .then((data) => setDates(data));
   }, []);
   function handleDateDelete(ddate) {
     console.log(ddate);
-    fetch(
-      "https://enigmatic-tundra-20141.herokuapp.com/deleteByDate?date=" + ddate,
-      {
-        method: "DELETE",
-        headers: { "Content-type": "application/json" },
-      }
-    )
+    fetch("http://192.168.10.11:5005/deleteByDate?date=" + ddate, {
+      method: "DELETE",
+      headers: { "Content-type": "application/json" },
+    })
       .then((res) => res.json())
       .then((data) => setDDStatus(data));
     window.location.reload(true);
   }
   const handleDelete = () => {
-    fetch("https://enigmatic-tundra-20141.herokuapp.com/deleteAll", {
+    fetch("http://192.168.10.11:5005/deleteAll", {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
     })

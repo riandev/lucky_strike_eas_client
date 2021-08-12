@@ -14,13 +14,13 @@ const Qc = () => {
     setQcNumber(e.target.value);
   };
   const handleSearch = () => {
-    fetch(`https://enigmatic-tundra-20141.herokuapp.com/dMatched/${qcNumber}`)
+    fetch(`http://192.168.10.11:5005/dMatched/${qcNumber}`)
       .then((res) => res.json())
       .then((data) => setMatchedQC(data));
   };
   const handleUpdate = (id) => {
     console.log(id);
-    fetch(`https://enigmatic-tundra-20141.herokuapp.com/update/${id}`)
+    fetch(`http://192.168.10.11:5005/update/${id}`)
       .then((res) => res.json())
       .then((data) => setUpdate(data));
   };

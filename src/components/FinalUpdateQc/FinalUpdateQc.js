@@ -56,7 +56,7 @@ const FinalUpdateQc = ({ ansData, qcBy }) => {
     data.qcDate = new Date().toLocaleDateString();
     data.qcTime = new Date().toLocaleTimeString();
     console.log(data);
-    fetch(`https://enigmatic-tundra-20141.herokuapp.com/finalUpdate/${id}`, {
+    fetch(`http://192.168.10.11:5005/finalUpdate/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -65,7 +65,7 @@ const FinalUpdateQc = ({ ansData, qcBy }) => {
       .then((output) => {
         setStatus(output);
       });
-    fetch("https://enigmatic-tundra-20141.herokuapp.com/reportsData", {
+    fetch("http://192.168.10.11:5005/reportsData", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(finalData),

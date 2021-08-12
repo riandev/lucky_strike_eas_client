@@ -7,7 +7,7 @@ const Reports = () => {
   const [dates, setDates] = useState([]);
   const [downloaded, setDownloaded] = useState([]);
   useEffect(() => {
-    fetch("https://enigmatic-tundra-20141.herokuapp.com/reports")
+    fetch("http://192.168.10.11:5005/reports")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -15,16 +15,14 @@ const Reports = () => {
       });
   }, []);
   useEffect(() => {
-    fetch("https://enigmatic-tundra-20141.herokuapp.com/reportDates")
+    fetch("http://192.168.10.11:5005/reportDates")
       .then((res) => res.json())
       .then((data) => setDates(data));
   }, []);
 
   function handlePrepare(pdate) {
     console.log(pdate);
-    fetch(
-      "https://enigmatic-tundra-20141.herokuapp.com/prepareByDate?date=" + pdate
-    )
+    fetch("http://192.168.10.11:5005/prepareByDate?date=" + pdate)
       .then((res) => res.json())
       .then((data) => setDownloaded(data));
   }

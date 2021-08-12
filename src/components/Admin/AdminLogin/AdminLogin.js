@@ -20,7 +20,7 @@ const AdminLogin = () => {
   console.log(email);
 
   useEffect(() => {
-    fetch("https://enigmatic-tundra-20141.herokuapp.com/admin?email=" + email)
+    fetch("http://192.168.10.11:5005/admin?email=" + email)
       .then((res) => res.json())
       .then((data) => setMatchedAdmin(data))
       .catch((err) => console.log(err));

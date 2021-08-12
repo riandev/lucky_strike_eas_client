@@ -31,10 +31,7 @@ const LeadGenerate = () => {
   };
 
   const generateInitial = () => {
-    fetch(
-      "https://enigmatic-tundra-20141.herokuapp.com/initialLead?initDate=" +
-        initialDate
-    )
+    fetch("http://192.168.10.11:5005/initialLead?initDate=" + initialDate)
       .then((res) => res.json())
       .then((data) => {
         setInitialLeads(
@@ -58,7 +55,7 @@ const LeadGenerate = () => {
   ];
 
   const updateInitialLeads = () => {
-    fetch("https://enigmatic-tundra-20141.herokuapp.com/updateInitialLead", {
+    fetch("http://192.168.10.11:5005/updateInitialLead", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(initialLeads),
@@ -68,10 +65,7 @@ const LeadGenerate = () => {
   };
 
   const regenerateLeads = () => {
-    fetch(
-      "https://enigmatic-tundra-20141.herokuapp.com/regenerate?regenDate=" +
-        regenDate
-    )
+    fetch("http://192.168.10.11:5005/regenerate?regenDate=" + regenDate)
       .then((res) => res.json())
       .then((data) => {
         setRegenerate(
@@ -88,7 +82,7 @@ const LeadGenerate = () => {
   };
 
   const regenerateUpdate = () => {
-    fetch("https://enigmatic-tundra-20141.herokuapp.com/regenerateUpdate", {
+    fetch("http://192.168.10.11:5005/regenerateUpdate", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(regenerate),

@@ -7,7 +7,7 @@ const AdminSignUp = () => {
   const [signUpStatus, setSignUpStatus] = useState(false);
   const onSubmit = (data) => {
     console.log(data);
-    fetch("https://enigmatic-tundra-20141.herokuapp.com/adminSignUp", {
+    fetch("http://192.168.10.11:5005/adminSignUp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
