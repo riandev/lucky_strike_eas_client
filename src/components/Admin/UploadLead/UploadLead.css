@@ -1,0 +1,18 @@
+.container {
+  text-align: center;
+  padding: 15px;
+  margin: 10px auto;
+}
+
+.csv-input {
+  padding: 20px;
+  display: block;
+  margin: 20px auto;
+  border: 1px dotted blue;
+  border-radius: 5px;
+}
+
+.container p {
+  padding-top: 10px;
+  color: #666;
+}
