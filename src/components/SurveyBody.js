@@ -278,6 +278,7 @@ const SurveyBody = () => {
             <option value="luckyStrike">Lucky Strike</option>
             <option value="goldLeafHavana">Gold Leaf Havana</option>
             <option value="navyCentury">Navy Century</option>
+            <option value="other">Others</option>
           </Form.Control>
         </Form.Group>
       </div>
@@ -712,6 +713,7 @@ const SurveyBody = () => {
             q3 === "-18" ||
             q4 === "goldLeafHavana" ||
             q4 === "navyCentury" ||
+            q4 === "other" ||
             q15 === "Pack Display" ||
             q15 === "Lighter hanger" ||
             q15 === "Photo Frame" ||
