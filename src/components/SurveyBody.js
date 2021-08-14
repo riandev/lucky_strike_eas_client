@@ -673,7 +673,7 @@ const SurveyBody = () => {
         <Form.Group onChange={q14value} as={Row}>
           <Form.Control as="select" className="w-50 ml-3">
             <option>একটি নির্বাচন করুন</option>
-            <option value="Popular in 80 Country">80 টি দেশে জনপ্রিয়</option>
+            <option value="Popular in 80 Country">৮০ টি দেশে জনপ্রিয়</option>
             <option value="Flavour Full Taste">Full Flavour স্বাদ</option>
             <option value="Attractive Capsule Proposition">
               আকর্ষণীয় ক্যাপসুল প্রস্তাব
